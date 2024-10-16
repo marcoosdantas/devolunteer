@@ -8,8 +8,13 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 public class DeveloperService {
-    private final DeveloperRepository developerRepository;
-    public void save(DeveloperEntity developerEntity){
-        developerRepository.save(developerEntity);
+  private final DeveloperRepository developerRepository;
+
+  public void save(DeveloperEntity developerEntity) {
+    developerRepository.save(developerEntity);
+  }
+
+    public DeveloperEntity findById(String developerId) {
+    return developerRepository.findById(developerId).orElse(null);
     }
 }

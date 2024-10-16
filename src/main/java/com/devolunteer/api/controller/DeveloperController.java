@@ -13,15 +13,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api/devs")
+@RequestMapping("/api/dev")
 @Validated
 @RequiredArgsConstructor
 public class DeveloperController {
-    private final DeveloperService developerService;
+  private final DeveloperService developerService;
 
-    @PostMapping
-    public ResponseEntity<DeveloperEntity> createDev(@Valid @RequestBody DeveloperEntity dev) {
-        developerService.save(dev);
-        return new ResponseEntity<>(dev, HttpStatus.CREATED);
-    }
+  @PostMapping
+  public ResponseEntity<DeveloperEntity> createDev(@Valid @RequestBody DeveloperEntity dev) {
+    developerService.save(dev);
+    return new ResponseEntity<>(dev, HttpStatus.CREATED);
+  }
 }
